@@ -74,6 +74,7 @@ public class CargoController {
 		return "redirect:/cargos/cadastrar";
 	}
 	
+	
 	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
 		
@@ -86,6 +87,7 @@ public class CargoController {
 		
 		return "redirect:/cargos/listar";
 	}
+	
 	@ModelAttribute("departamentos") 
 	public List<Departamento> listaDeDepartamentos(){
 		return departamentoService.burcarTodos();

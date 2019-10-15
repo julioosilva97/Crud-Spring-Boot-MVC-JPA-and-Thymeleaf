@@ -48,6 +48,7 @@ public class FuncionarioController {
 		return "funcionario/cadastro"; // diretorio onde está a página
 	}
 
+	
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
 		model.addAttribute("funcionarios", funcionarioService.burcarTodos());
@@ -85,7 +86,8 @@ public class FuncionarioController {
 		return "redirect:/funcionarios/listar";
 	}
 	
-	@PostMapping("/excluir/{id}")
+	
+	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
 		funcionarioService.excluir(id);
 		attr.addFlashAttribute("sucess","Funcionário Excluido com sucesso");
